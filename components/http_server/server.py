@@ -16,30 +16,30 @@ class HttpSerReqHandle(BaseHTTPRequestHandler):
         print("[ Got preset path ]%s" % routers[0] )
         if(self.path!=routers[0]):
             self.send_response(200, 'Got it')
-            self.send_header('Content-type', 'text/html')
+            self.send_header('Content-type', 'application/json')
             self.end_headers()
-            self.wfile.write(b"^^^")
+            self.wfile.write(b"{'val':'^^^'}")
             return
 
         self.send_response(200, 'Got it')
-        self.send_header('Content-type', 'text/html')
+        self.send_header('Content-type', 'application/json')
         self.end_headers()
-        self.wfile.write(b"<<<")
+        self.wfile.write(b"{'val':'<<<'}")
 
     def _do_post_process_gateway(self):
         print("[ Got requestpath ]%s" % self.path )
         print("[ Got preset path ]%s" % routers[0] )
         if(self.path!=routers[0]):
             self.send_response(200, 'Got it')
-            self.send_header('Content-type', 'text/html')
+            self.send_header('Content-type', 'application/json')
             self.end_headers()
-            self.wfile.write(b"^^^")
+            self.wfile.write(b"{'val':'^^^'}")
             return
 
         self.send_response(200, 'Got it')
-        self.send_header('Content-type', 'text/html')
+        self.send_header('Content-type', 'application/json')
         self.end_headers()
-        self.wfile.write(b"<<<")
+        self.wfile.write(b"{'val':'<<<'}")
 
 
     def do_GET(self):
