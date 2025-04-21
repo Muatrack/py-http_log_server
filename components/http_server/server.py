@@ -18,13 +18,13 @@ class HttpSerReqHandle(BaseHTTPRequestHandler):
             self.send_response(200, 'Got it')
             self.send_header('Content-type', 'application/json')
             self.end_headers()
-            self.wfile.write(b"{'val':'^^^'}")
+            self.wfile.write(b'{"val":"^^^"}')
             return
 
         self.send_response(200, 'Got it')
         self.send_header('Content-type', 'application/json')
         self.end_headers()
-        self.wfile.write(b"{'val':'<<<'}")
+        self.wfile.write(b'{"val":"<<<"}')
 
     def _do_post_process_gateway(self):
         print("[ Got requestpath ]%s" % self.path )
@@ -33,13 +33,13 @@ class HttpSerReqHandle(BaseHTTPRequestHandler):
             self.send_response(200, 'Got it')
             self.send_header('Content-type', 'application/json')
             self.end_headers()
-            self.wfile.write(b"{'val':'^^^'}")
+            self.wfile.write(b'{"val":"^^^"}')
             return
 
         self.send_response(200, 'Got it')
         self.send_header('Content-type', 'application/json')
         self.end_headers()
-        self.wfile.write(b"{'val':'<<<'}")
+        self.wfile.write(b'{"val":"<<<"}')
 
 
     def do_GET(self):
