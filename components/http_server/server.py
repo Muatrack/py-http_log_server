@@ -49,7 +49,7 @@ class HttpSerReqHandle(BaseHTTPRequestHandler):
     def do_POST(self):
         self._do_post_process_gateway()
 
-def start(host:str='127.0.0.1',port:int=8000):
+def start(host:str='0.0.0.0',port:int=8000):
     bindAddr=(host, port)
     ser = HTTPServer(bindAddr, HttpSerReqHandle)
     print('Http server running at %s %d' % (host, port))
